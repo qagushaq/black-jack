@@ -1,12 +1,11 @@
 class Players
-
   attr_accessor :money, :cards, :score, :name
 
   def initialize(name)
     @money = 100
     @cards = []
     @score = 0
-    @name = name
+    @name = name.capitalize
   end
 
   def take_bet

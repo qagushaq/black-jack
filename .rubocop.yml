@@ -1,0 +1,26 @@
+AllCops:
+    DisplayCopNames: true
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/AbcSize:
+  Max: 20
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/CommentedKeyword:
+  Enabled: false
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
