@@ -34,7 +34,7 @@ class GameCore
 
   def give_card(player)
     player.take_card(deck)
-    raise "Points exceeded, Player: #{player.name} lose, Points: #{player.score})" if player.score > 21
+    raise "Points exceeded, Player: #{player.name} lose, Points: #{player.score}" if player.score > 21
 
     player_miss
   end

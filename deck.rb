@@ -30,7 +30,7 @@ class Deck
 
   def add_score(card_name)
     return 10 if %w[J K Q].include?(card_name)
-    return [1, 11] if card_name == 'A'
+    return 11 if card_name == 'A'
 
     card_name.to_i
   end

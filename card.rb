@@ -14,4 +14,7 @@ class Card
     face = "#{card_name}#{card_suit}"
   end
 
+  def ace?
+    return if card_name.include?('A')
+  end
 end
