@@ -102,7 +102,7 @@ class GameView
   end
 
   def show_player_card
-    puts "Added cart: #{game.player.cards[2].name}"
+    puts "Added cart: #{game.player.cards[2].face}"
   end
 
   def show_all_cards
@@ -142,13 +142,13 @@ class GameView
 
   def show_player_cards
     game.player.cards.each do |card|
-      print "#{card.name}  "
+      print "#{card.face}  "
     end
   end
 
   def show_dealer_cards
     game.dealer.cards.each do |card|
-      print "#{card.name}  "
+      print "#{card.face}  "
     end
   end
 

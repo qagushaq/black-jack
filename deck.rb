@@ -1,10 +1,8 @@
 require_relative 'players'
+require_relative 'card'
 
 class Deck
   attr_accessor :cards
-
-  CARDS_NAMES = %w[2 3 4 5 6 7 8 9 10 J Q K A].freeze
-  CARDS_SUITS = %w[♧ ♡ ♤ ♢].freeze
 
   def initialize
     @cards = []
@@ -20,14 +18,14 @@ class Deck
   private
 
   def generate
-    CARDS_NAMES.each do |card_name|
-      CARDS_SUITS.each do |card_suit|
+    Card::CARDS_NAMES.each do |card_name|
+      Card::CARDS_SUITS.each do |card_suit|
         score = add_score(card_name)
-        name = "#{card_name}#{card_suit}"
-        card = Card.new(name, score)
+        card = Card.new(card_name, card_suit, score)
         @cards << card
       end
     end
+    @cards.shuffle!
   end
 
   def add_score(card_name)

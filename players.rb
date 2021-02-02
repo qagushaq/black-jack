@@ -33,7 +33,7 @@ class Players
   def calculate_score
     self.score = 0
     cards.each do |card|
-      if card.name.include?('A')
+      if card.card_name.include?('A')
         add_ace_score(card)
       else
         self.score += card.score
