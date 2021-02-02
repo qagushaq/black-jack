@@ -11,7 +11,7 @@ class Card
   CARDS_SUITS = %w[♧ ♡ ♤ ♢].freeze
 
   def face
-    face = "#{card_name}#{card_suit}"
+    card_name + card_suit
   end
 
   def ace?

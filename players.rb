@@ -33,12 +33,8 @@ class Players
   def calculate_score
     self.score = 0
     cards.each do |card|
-      if card.card_name.include?('A')
-        self.score += card.score
-        ace.times { self.score -= 10 if score > 21 }
-      else
-        self.score += card.score
-      end
+      self.score += card.score
+      ace.times { self.score -= 10 if score > 21 } if card.card_name.include?('A')
     end
     self.score
   end
@@ -51,4 +47,11 @@ class Players
     self.name = name
   end
 
+  def faces
+    faces = ''
+    cards.each do |card|
+      faces += "#{card.face} "
+    end
+    faces
+  end
 end

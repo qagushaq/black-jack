@@ -2,7 +2,7 @@ AllCops:
     DisplayCopNames: true
 
 Metrics/LineLength:
-  Max: 120
+  Max: 140
 
 Metrics/MethodLength:
   Max: 30
