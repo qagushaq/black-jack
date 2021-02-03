@@ -1,20 +1,21 @@
 class Card
-  attr_accessor :card_name, :card_suit, :score
+  attr_accessor :name, :suit, :score
 
-  def initialize(card_name, card_suit, score)
-    @card_name = card_name
-    @card_suit = card_suit
+  def initialize(name, suit, score)
+    @name = name
+    @suit = suit
     @score = score
   end
 
-  CARDS_NAMES = %w[2 3 4 5 6 7 8 9 10 J Q K A].freeze
-  CARDS_SUITS = %w[♧ ♡ ♤ ♢].freeze
+  NAMES = %w[2 3 4 5 6 7 8 9 10 J Q K A].freeze
+  SUITS = %w[♧ ♡ ♤ ♢].freeze
 
   def face
-    card_name + card_suit
+    name + suit
   end
 
   def ace?
-    return if card_name.include?('A')
+    return if name.include?('A')
   end
+
 end

@@ -31,16 +31,20 @@ class Players
   end
 
   def calculate_score
-    self.score = 0
+    @total = 0
     cards.each do |card|
-      self.score += card.score
-      ace.times { self.score -= 10 if score > 21 } if card.card_name.include?('A')
+      if card.ace?
+        @total += 11
+      else
+        @total += card.score
+      end
     end
-    self.score
+    ace.times { @total -= 10 if @total > 21 }
+    self.score = @total
   end
 
   def ace
-    @cards.count(&:ace?)
+    @cards.count { |card| card.name == 'A' }
   end
 
   def add_name(name)
