@@ -33,11 +33,7 @@ class Players
   def calculate_score
     @total = 0
     cards.each do |card|
-      if card.ace?
-        @total += 11
-      else
-        @total += card.score
-      end
+      @total += card.score
     end
     ace.times { @total -= 10 if @total > 21 }
     self.score = @total
